@@ -10,40 +10,41 @@
 
 ## Estado general
 
-**HC2 en proceso — Nivel global actual: N2/5 · implementación y pilotos**
+**🛠️ N2/5 · HC2 en proceso: implementación y pilotos**
 
 El avance se mide por madurez de evidencia, no por cantidad de código. Una celda país–sector alcanza el nivel HC2 únicamente cuando cuenta con modelo identificable, datos, ejecución reproducible, salida conservada y métrica de validación.
 
 ### Escala de avance
 
-| Nivel | Interpretación ejecutiva |
-|---|---|
-| **N0 · No iniciado** | No existe todavía un caso o una adaptación verificable. |
-| **N1 · Base definida** | Existe plan, fuentes, arquitectura o documentación, pero no una ejecución reportable. |
-| **N2 · Implementado / piloto** | Hay código y un primer caso o integración, pero falta reproducibilidad completa o validación comparable. |
-| **N3 · Ejecutado** | El caso corre de forma reproducible y conserva una salida inspeccionable. |
-| **N4 · Validado** | Existe contraste cuantitativo con datos independientes y una métrica explícita. |
-| **N5 · Listo para HC2** | La celda país–sector cumple todos los requisitos de evidencia y puede reportarse. |
+| Indicador | Nivel | Interpretación ejecutiva |
+|---|---:|---|
+| ⚠️ | **N0 · No iniciado** | No existe todavía un caso o una adaptación verificable. |
+| 📃 | **N1 · Base definida** | Existe plan, fuentes, arquitectura o documentación, pero no una ejecución reportable. |
+| 🛠️ | **N2 · Implementado / piloto** | Hay código y un primer caso o integración, pero falta reproducibilidad completa o validación comparable. |
+| 📊 | **N3 · Ejecutado** | El caso corre de forma reproducible y conserva una salida inspeccionable. |
+| ✅ | **N4 · Validado** | Existe contraste cuantitativo con datos independientes y una métrica explícita. |
+| 📒 | **N5 · Listo para HC2** | La celda país–sector cumple todos los requisitos de evidencia y puede reportarse. |
+| ⛔ | **N6 · Bloqueado / problema a solucionar** | Existe un bloqueo o problema material que impide avanzar al siguiente nivel. |
 
 | Dimensión | Nivel actual |
 |---|---|
-| Modelos chilenos principales identificados | **N2** · Base disponible |
-| Motor común Chile–Alemania | **N2** · Publicado en `emission_model` |
-| Piloto industrial alemán | **N4** · Validado en Baden-Württemberg |
-| Modelo residencial alemán | **N1** · Datos y contrato en preparación |
-| Modelo de transporte alemán | **N0** · Adaptación pendiente |
-| Separación comercial / público | **N1** · Brecha metodológica abierta |
-| Métricas comparables por país–sector | **N1** · En consolidación |
+| Modelos chilenos principales identificados | **📃 N1** · Base disponible |
+| Motor común Chile–Alemania | **🛠️ N2** · Publicado en `emission_model` |
+| Piloto industrial alemán | **✅ N4** · Validado en Baden-Württemberg |
+| Modelo residencial alemán | **📃 N1** · Datos y contrato en preparación |
+| Modelo de transporte alemán | **⚠️ N0** · Adaptación pendiente |
+| Separación comercial / público | **📃 N1** · Brecha metodológica abierta |
+| Métricas comparables por país–sector | **📃 N1** · En consolidación |
 
 ## Matriz rápida de cobertura HC2
 
 | Sector | Chile | Alemania | Próximo cierre |
 |---|---|---|---|
-| Residencial | **N2** · Modelo térmico basado en Censo/SII y `tsib_fcr`; validación final pendiente | **N1** · Datos LoD2/ALKIS y contrato de datos documentados; falta ejecutar el modelo | Caso reproducible con datos, clima, arquetipos y métricas |
-| Comercial | **N1** · Incluido en el modelo industrial-comercial; separación pendiente | **N2** · Evidencia agregada en GHD; falta separar comercial y público | Definir frontera sectorial y fuente de validación |
-| Público | **N1** · Incluido dentro de servicios; separación pendiente | **N0** · Aún no existe una celda público separada | Caso y fuente independiente o justificación metodológica |
-| Industrial | **N3** · Cadena RETC → energía → demanda térmica ejecutada y verificada | **N4** · Piloto Baden-Württemberg: cobertura Industrie **1,03×** contra LAK×AGEB | Ampliar cobertura y cerrar métrica comparable HC2 |
-| Transporte | **N3** · Modelo LPV ejecutado y extendido a cuatro conurbaciones chilenas | **N0** · Modelo alemán aún por adaptar | Caso alemán reproducible y validado |
+| Residencial | **🛠️ N2** · Modelo térmico basado en Censo/SII y `tsib_fcr`; validación final pendiente | **📃 N1** · Datos LoD2/ALKIS y contrato de datos documentados; falta ejecutar el modelo | Caso reproducible con datos, clima, arquetipos y métricas |
+| Comercial | **📃 N1** · Incluido en el modelo industrial-comercial; separación pendiente | **🛠️ N2** · Evidencia agregada en GHD; falta separar comercial y público | Definir frontera sectorial y fuente de validación |
+| Público | **📃 N1** · Incluido dentro de servicios; separación pendiente | **⚠️ N0** · Aún no existe una celda público separada | Caso y fuente independiente o justificación metodológica |
+| Industrial | **📊 N3** · Cadena RETC → energía → demanda térmica ejecutada y verificada | **✅ N4** · Piloto Baden-Württemberg: cobertura Industrie **1,03×** contra LAK×AGEB | Ampliar cobertura y cerrar métrica comparable HC2 |
+| Transporte | **📊 N3** · Modelo LPV ejecutado y extendido a cuatro conurbaciones chilenas | **⚠️ N0** · Modelo alemán aún por adaptar | Caso alemán reproducible y validado |
 
 > Los factores **1,03×** y **0,81×** son resultados de cobertura contra LAK×AGEB; no equivalen directamente a MAPE. La métrica exigida por HC2 debe consolidarse por país y sector.
 
