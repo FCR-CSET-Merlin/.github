@@ -38,13 +38,17 @@ El avance se mide por madurez de evidencia, no por cantidad de código. Este cor
 
 ## Matriz rápida de cobertura HC2
 
+**Corte de la matriz:** 3 de septiembre de 2026. Los estados se asignan sólo a
+entregas versionadas en la rama principal; los resultados que viven en PR abiertos
+se muestran como pendientes de integración.
+
 | Sector | Chile | Alemania | Próximo cierre |
 |---|---|---|---|
-| Residencial | **🛠️ N2** · Modelo térmico basado en Censo/SII y `tsib_fcr`; validación final pendiente | **📃 N1** · Datos LoD2/ALKIS y contrato de datos documentados; falta ejecutar el modelo | Caso reproducible con datos, clima, arquetipos y métricas |
+| Residencial | **🛠️ N2** · Modelo térmico basado en Censo/SII y `tsib_fcr`; la integración `MERLIN_RCP`–`tsib_fcr` sigue en el PR [#2](https://github.com/FCR-CSET-Merlin/MERLIN_RCP/pull/2) y la validación final está pendiente | **📃 N1** · Datos LoD2/ALKIS y contrato de datos documentados; falta ejecutar el modelo | Fusionar y validar el caso reproducible Chile; ejecutar el caso alemán con datos, clima, arquetipos y métricas |
 | Comercial | **📃 N1** · Incluido en el modelo industrial-comercial; separación pendiente | **🛠️ N2** · Evidencia agregada en GHD; falta separar comercial y público | Definir frontera sectorial y fuente de validación |
 | Público | **📃 N1** · Incluido dentro de servicios; separación pendiente | **⚠️ N0** · Aún no existe una celda público separada | Caso y fuente independiente o justificación metodológica |
-| Industrial | **📊 N3** · Cadena RETC → energía → demanda térmica ejecutada y verificada | **✅ N4** · Piloto Baden-Württemberg: cobertura Industrie **1,03×** contra LAK×AGEB | Ampliar cobertura y cerrar métrica comparable HC2 |
-| Transporte | **📊 N3** · Modelo LPV ejecutado y extendido a cuatro conurbaciones chilenas | **⚠️ N0** · Modelo alemán aún por adaptar | Caso alemán reproducible y validado |
+| Industrial | **📊 N3** · Cadena RETC → energía → demanda térmica ejecutada y verificada; `emission_model` añadió validación cobertura-consciente BNE + INGEI, sin convertir la cobertura parcial en validación plena | **✅ N4** · Piloto Baden-Württemberg: cobertura Industrie **1,03×** contra LAK×AGEB | Ampliar cobertura y cerrar métrica comparable HC2 |
+| Transporte | **📊 N3** · Modelo LPV ejecutado para **cinco conurbaciones**; la validación 2024 está documentada en el PR [#4](https://github.com/FCR-CSET-Merlin/energy-road-transport-chile/pull/4), todavía abierto | **⚠️ N0** · Modelo alemán aún por adaptar | Integrar/revisar el PR de validación Chile y ejecutar un caso alemán reproducible y validado |
 
 > Los factores **1,03×** y **0,81×** son resultados de cobertura contra LAK×AGEB; no equivalen directamente a MAPE. La métrica exigida por HC2 debe consolidarse por país y sector.
 
