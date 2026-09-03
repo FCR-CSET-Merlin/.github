@@ -4,7 +4,7 @@
 
 > **MERLIN** desarrolla modelos energéticos georreferenciados para apoyar la planificación energética y la descarbonización territorial en Chile y Alemania.
 
-**Corte:** 2 de septiembre de 2026  
+**Corte:** 3 de septiembre de 2026  
 **Fecha objetivo HC2:** 29 de octubre de 2026  
 **Entrega del reporte técnico:** 29 de noviembre de 2026
 
@@ -12,7 +12,7 @@
 
 **🛠️ N2/5 · HC2 en proceso: implementación y pilotos**
 
-El avance se mide por madurez de evidencia, no por cantidad de código. Una celda país–sector alcanza el nivel HC2 únicamente cuando cuenta con modelo identificable, datos, ejecución reproducible, salida conservada y métrica de validación.
+El avance se mide por madurez de evidencia, no por cantidad de código. Este corte incorpora los cambios fusionados hasta el 3 de septiembre de 2026; los PR abiertos se mantienen como trabajo pendiente. Una celda país–sector alcanza el nivel HC2 únicamente cuando cuenta con modelo identificable, datos, ejecución reproducible, salida conservada y métrica de validación.
 
 ### Escala de avance
 
@@ -50,11 +50,13 @@ El avance se mide por madurez de evidencia, no por cantidad de código. Una celd
 
 ## Avances recientes
 
-- **Emisiones y demanda térmica:** `emission_model` publicó el motor core agnóstico de país y el adaptador de Baden-Württemberg.
-- **Chile:** cadena RETC → energía → demanda térmica verificada con **8.893/8.893 filas idénticas** para 2024.
+- **Emisiones y demanda térmica:** `emission_model` publicó el motor core agnóstico de país, los adaptadores Chile/Baden-Württemberg y una validación chilena cobertura-consciente en tres niveles frente a BNE e INGEI.
+- **Chile:** cadena RETC → energía → demanda térmica verificada con **8.893/8.893 filas idénticas** para 2024; la nueva validación reporta una cobertura `structural_core` de **16,8 %** en el ámbito industrial y **29,8 %** en el total nacional, por debajo del umbral de 35 % definido para ese KPI.
 - **Baden-Württemberg:** cadena completa ejecutada con fuentes EU-ETS y LUBW; se excluye `Energiewirtschaft` de la demanda final.
 - **Validación alemana:** cobertura de **1,03× en Industrie** y **0,81× en Haushalte + GHD** contra LAK ajustado por AGEB.
-- **Transporte:** modelo de actividad vial LPV ampliado a Antofagasta, Concepción, La Serena–Coquimbo y Valparaíso.
+- **Transporte:** el modelo LPV fue extendido a **cinco conurbaciones** y cuenta con validación 2024: MAPE **25,1 %** del modelo comunal calibrado contra BNE regional, **10,3 %** contra ventas SEC totales por conurbación y **18,0 %** en el cruce con BNE regional. El PR [#4](https://github.com/FCR-CSET-Merlin/energy-road-transport-chile/pull/4) sigue abierto y no se considera integrado hasta su revisión.
+- **Bombas de calor:** `hp_residential_sim` incorporó optimización horaria industrial y residencial ACS, selección batch por edificio y exportación de manifiestos; el repositorio contiene pruebas automatizadas, pero su integración con el flujo residencial principal aún está pendiente.
+- **H₂ y e-fuels:** `H2Integrate_CL` fusionó dos casos DOE Chile para Antofagasta y Magallanes con recursos meteorológicos públicos 2023, manifiesto de procedencia y verificación de integridad.
 - **Datos alemanes:** adquisición reproducible de datos LoD2 y ALKIS documentada para Colonia/NRW.
 - **Gobernanza:** `merlin-index` incorpora la matriz de evidencia y el flujo de cierre para el reporte CORFO.
 
@@ -74,6 +76,10 @@ El avance se mide por madurez de evidencia, no por cantidad de código. Una celd
 - [x] Publicar motor común y primer adaptador alemán.
 - [x] Ejecutar piloto industrial en Baden-Württemberg.
 - [x] Documentar fuentes LoD2/ALKIS para Alemania.
+- [x] Extender el modelo LPV a cinco conurbaciones y documentar su validación 2024.
+- [x] Incorporar validación chilena cobertura-consciente BNE + INGEI.
+- [x] Incorporar casos DOE Chile y recursos meteorológicos públicos en `H2Integrate_CL`.
+- [ ] Revisar y cerrar el PR [#4 de transporte](https://github.com/FCR-CSET-Merlin/energy-road-transport-chile/pull/4).
 - [ ] Definir matriz definitiva de cobertura país–sector.
 - [ ] Completar modelo residencial alemán.
 - [ ] Completar adaptación alemana de transporte.
@@ -89,6 +95,7 @@ El avance se mide por madurez de evidencia, no por cantidad de código. Una celd
 | Índice, evidencia y seguimiento | [`merlin-index`](https://github.com/FCR-CSET-Merlin/merlin-index) |
 | Emisiones y demanda térmica | [`emission_model`](https://github.com/FCR-CSET-Merlin/emission_model) |
 | Demanda residencial | [`MERLIN_RCP`](https://github.com/FCR-CSET-Merlin/MERLIN_RCP) · [`tsib_fcr`](https://github.com/FCR-CSET-Merlin/tsib_fcr) |
+| Bombas de calor | [`hp_residential_sim`](https://github.com/FCR-CSET-Merlin/hp_residential_sim) · [`tea_heat_pumps`](https://github.com/FCR-CSET-Merlin/tea_heat_pumps) |
 | Demanda eléctrica | [`MERLIN_EDM`](https://github.com/FCR-CSET-Merlin/MERLIN_EDM) |
 | Transporte | [`energy-road-transport-chile`](https://github.com/FCR-CSET-Merlin/energy-road-transport-chile) |
 | H₂ y e-fuels | [`H2Integrate_CL`](https://github.com/FCR-CSET-Merlin/H2Integrate_CL) · [`h2v_tea`](https://github.com/FCR-CSET-Merlin/h2v_tea) |
