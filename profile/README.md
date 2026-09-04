@@ -28,7 +28,7 @@ El avance se mide por madurez de evidencia, no por cantidad de código. Este cor
 
 | Dimensión | Nivel actual |
 |---|---|
-| Modelos chilenos principales identificados | **📃 N1** · Base disponible |
+| Modelos chilenos prioritarios | **🛠️ N2** · Varios casos ejecutados; cobertura transversal y métricas por sector aún pendientes |
 | Motor común Chile–Alemania | **🛠️ N2** · Publicado en `emission_model` |
 | Piloto industrial alemán | **✅ N4** · Validado en Baden-Württemberg |
 | Modelo residencial alemán | **📃 N1** · Datos y contrato en preparación |
@@ -58,7 +58,7 @@ se muestran como pendientes de integración.
 - **Chile:** cadena RETC → energía → demanda térmica verificada con **8.893/8.893 filas idénticas** para 2024; la nueva validación reporta una cobertura `structural_core` de **16,8 %** en el ámbito industrial y **29,8 %** en el total nacional, por debajo del umbral de 35 % definido para ese KPI.
 - **Baden-Württemberg:** cadena completa ejecutada con fuentes EU-ETS y LUBW; se excluye `Energiewirtschaft` de la demanda final.
 - **Validación alemana:** cobertura de **1,03× en Industrie** y **0,81× en Haushalte + GHD** contra LAK ajustado por AGEB.
-- **Transporte:** el modelo LPV fue extendido a **cinco conurbaciones** y cuenta con validación 2024: MAPE **25,1 %** del modelo comunal calibrado contra BNE regional, **10,3 %** contra ventas SEC totales por conurbación y **18,0 %** en el cruce con BNE regional. El PR [#4](https://github.com/FCR-CSET-Merlin/energy-road-transport-chile/pull/4) sigue abierto y no se considera integrado hasta su revisión.
+- **Transporte:** el modelo LPV está extendido a **cinco conurbaciones**. El PR [#4](https://github.com/FCR-CSET-Merlin/energy-road-transport-chile/pull/4) documenta la validación 2024 —MAPE **25,1 %** del modelo comunal calibrado contra BNE regional, **10,3 %** contra ventas SEC totales por conurbación y **18,0 %** en el cruce con BNE regional—, pero sigue abierto y no se considera integrado hasta su revisión.
 - **Bombas de calor:** `hp_residential_sim` incorporó optimización horaria industrial y residencial ACS, selección batch por edificio y exportación de manifiestos; el repositorio contiene pruebas automatizadas, pero su integración con el flujo residencial principal aún está pendiente.
 - **H₂ y e-fuels:** `H2Integrate_CL` fusionó dos casos DOE Chile para Antofagasta y Magallanes con recursos meteorológicos públicos 2023, manifiesto de procedencia y verificación de integridad.
 - **Datos alemanes:** adquisición reproducible de datos LoD2 y ALKIS documentada para Colonia/NRW.
@@ -80,7 +80,8 @@ se muestran como pendientes de integración.
 - [x] Publicar motor común y primer adaptador alemán.
 - [x] Ejecutar piloto industrial en Baden-Württemberg.
 - [x] Documentar fuentes LoD2/ALKIS para Alemania.
-- [x] Extender el modelo LPV a cinco conurbaciones y documentar su validación 2024.
+- [x] Extender el modelo LPV a cinco conurbaciones.
+- [ ] Integrar y cerrar la validación 2024 del modelo de transporte documentada en el PR [#4](https://github.com/FCR-CSET-Merlin/energy-road-transport-chile/pull/4).
 - [x] Incorporar validación chilena cobertura-consciente BNE + INGEI.
 - [x] Incorporar casos DOE Chile y recursos meteorológicos públicos en `H2Integrate_CL`.
 - [ ] Revisar y cerrar el PR [#4 de transporte](https://github.com/FCR-CSET-Merlin/energy-road-transport-chile/pull/4).
@@ -88,7 +89,7 @@ se muestran como pendientes de integración.
 - [ ] Completar modelo residencial alemán.
 - [ ] Completar adaptación alemana de transporte.
 - [ ] Separar comercial y público.
-- [ ] Ejecutar validaciones y métricas comparables.
+- [ ] Consolidar validaciones y métricas comparables por celda país–sector.
 - [ ] Congelar casos, datos, parámetros y contratos.
 - [ ] Consolidar paquete de evidencia para el informe técnico.
 
